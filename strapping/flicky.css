@@ -1,0 +1,31 @@
+.main-body {
+    margin-top: 80px; /* don't show under the title bar */
+}
+
+.flexy {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;   
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flicky-card {
+    width:300px;
+    margin:8px;
+}
+.main-overflow {
+    overflow: auto;
+    max-height: 144px;
+}
+.footer-overflow {
+    overflow: auto;
+    max-height: 48px;
+}
+.pic-fix {
+    max-height: 224px;
+    overflow: hidden;
+}
+.pic-image {
+    width: 300px;
+}

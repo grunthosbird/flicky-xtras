@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flicky Vanilla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/flickr/images/favicon.png">
+    <link rel="stylesheet" href="/flickr/vanilla/vanilla.css">
+    <script src="/flickr/vanilla/utils.js"></script>
+    <script src="/flickr/vanilla/flickr.js"></script>
+</head>
+
+<script type="text/javascript">
+    function init() {
+        //Utils.loggingOn();
+        Flickr.setErrorBar('errors-bar');
+        Flickr.setLoadingBar('loading-bar');
+        Flickr.getMorePictures();
+        window.onscroll = function () { needMorePictures(); };
+    };
+
+    function needMorePictures() {
+        // If the  user scrolls to the end of the page, add more images.
+        // Some cross-browser stuff that jQuery handles nicely!
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        var scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+        var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        Utils.log(scrollTop + "," + scrollHeight + "," + winHeight);
+        if (scrollTop + winHeight > scrollHeight - 144) { // We're near the bottom
+            if (!Flickr.isLoading()) { // Make sure we're not doing it already
+                Flickr.getMorePictures();
+            };
+        };
+    };
+</script>
+
+<body onload="init()">
+    <div class="title-bar">
+        <div id="flicky-logo" title="Flicky Xtras Logo" alt="FLicky Xtras Logo"></div>
+        <div class="title-text"> fast flavourless frivolous flickr </div>
+        <div class="title-text fly-right"><a href="/flickr/" title="Main Menu"> &#x2302; </a></div>
+    </div>
+
+    <div id="errors-bar" class="errors-bar"></div>
+
+    <div class="pictures-block">
+        <div id="pictures-block" ></div>
+    </div>
+
+    <div id="loading-bar"></div>
+</body>
+</html>
