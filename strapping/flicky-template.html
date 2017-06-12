@@ -1,19 +1,19 @@
 <div class="card">
     <div class="pic-fix">
-        <img class="pic-image" ng-src="{{img}}" alt="{{pic.title}}">
+        <img class="pic-image" ng-src="{{pic.image}}" alt="{{pic.title}}">
     </div>
 
     <div class="card-block">
         <div class="main-overflow">
             <p class="card-text">
-                <a target="_blank" href="{{pic.link}}"> <strong> {{pic.title}} </strong> </a>
-                by <a target="_blank" href="{{pic.authlink}}"> {{pic.authname}} </a>
+                <a target="_blank" href="{{pic.link}}"><strong>{{pic.title}}</strong></a>
+                by <a target="_blank" href="{{pic.authlink}}">{{pic.authname}}</a>
             </p>
-            <p class="card-text text-muted"> {{pic.desc}} </p>
+            <p class="card-text text-muted">{{pic.desc}}</p>
         </div>
     </div>
 
     <div class="card-footer text-muted" title="tags">
-        <div class="footer-overflow"> <small> {{pic.tags}} </small> </div>
+        <div class="footer-overflow"><small>{{pic.tags}}</small></div>
     </div>
 </div>

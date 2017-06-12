@@ -1,15 +1,16 @@
 angular.module('appFlicky', [])
   .controller('flickyController', ['$scope', function ($scope) {
-    console.log("Controller");
 
     $scope.doSearch = function () {
       console.log("SEARCH [" + $scope.searchText + "]");
       $scope.goFlickr($scope.searchText);
     };
 
-    function fixEmpty(msg, missing) {
-        if (msg.replace(/ /g, '').length < 1) msg = "[no " + missing + "]";
-        return msg;
+    function isEmpty(text) {
+        return (text.replace(/ /g, '').length < 1);
+    };
+    function fixEmpty(text, missing) {
+        return (isEmpty(text)) ? "[no " + missing + "]" : text;
     };
 
     $scope.goFlickr = function (searchText) {
@@ -44,8 +45,7 @@ angular.module('appFlicky', [])
     return {
       restrict: 'EA',
       scope: {
-        pic: '=',
-        img: '='
+        pic: '='
       },
       templateUrl: 'flicky-template.html'
     };
