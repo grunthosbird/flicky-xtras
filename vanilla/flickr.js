@@ -83,7 +83,7 @@ var Flickr = (function () {
                 hideLoadingBar();
             }
         };
-        httpGet.open("GET", "/flickr/api/flicky-pull.php", true);
+        httpGet.open("GET", "../api/flicky-pull.php", true);
         httpGet.send();
     };
 

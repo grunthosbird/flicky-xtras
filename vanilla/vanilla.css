@@ -21,7 +21,7 @@
     }
 
     #flicky-logo {
-        background: transparent url('/flickr/images/flicky-logo.png') no-repeat;
+        background: transparent url('../images/flicky-logo.png') no-repeat;
         width: 313px;
         height: 57px;
         display: inline-block;
@@ -30,7 +30,7 @@
     #loading-bar {
         display: block;
         text-align: center;
-        background: transparent url('/flickr/images/loading-bar.gif') center no-repeat ; 
+        background: transparent url('../images/loading-bar.gif') center no-repeat ; 
         height: 64px;
     }
 
